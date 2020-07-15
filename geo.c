@@ -26,30 +26,30 @@ gcc -D_COM_GEO_MAIN geo.c
 */
 #ifdef _COM_GEO_MAIN
 extern int main(int argc, char **argv) {
-	double lat_t_houya = 35.744686; //保谷駅南口(日本測地)
-	double lon_t_houya = 139.570373; //保谷駅南口(日本測地)
-	double lat_w_houya;
-	double lon_w_houya;
-	double lat_t_inari = 35.721528; //東伏見稲荷神社(日本測地)
-	double lon_t_inari = 139.560722; //東伏見稲荷神社(日本測地)
-	double lat_w_inari; //
-	double lon_w_inari;
+	double lat_t_kurume = 35.742798; //イオンモール東久留米(バス停)(日本測地)
+	double lon_t_kurume = 139.529953; //イオンモール東久留米(バス停)(日本測地)
+	double lat_w_kurume;
+	double lon_w_kurume;
+	double lat_t_musasi = 35.742694; //イオンモールむさし村山(バス停)(日本測地)
+	double lon_t_musasi = 139.386639; //イオンモールむさし村山(バス停)(日本測地)
+	double lat_w_musasi;
+	double lon_w_musasi;
 
-	com_tokyo_to_wgs84(lat_t_houya, lon_t_houya, &lat_w_houya, &lon_w_houya);
-	fprintf(stdout,"保谷駅南口 日本測地: %.6lf,%.6lf 世界測地: %.6lf,%.6lf\n",
-		lat_t_houya, lon_t_houya, lat_w_houya, lon_w_houya);
+	com_tokyo_to_wgs84(lat_t_kurume, lon_t_kurume, &lat_w_kurume, &lon_w_kurume);
+	fprintf(stdout,"イオンモール東久留米(バス停)日本測地: %.6lf,%.6lf 世界測地: %.6lf,%.6lf\n",
+		lat_t_kurume, lon_t_kurume, lat_w_kurume, lon_w_kurume);
 
-	com_wgs84_to_tokyo(lat_w_houya, lon_w_houya, &lat_t_houya, &lon_t_houya);
-	fprintf(stdout,"保谷駅南口 世界測地: %.6lf,%.6lf 日本測地: %.6lf,%.6lf\n",
-		lat_w_houya, lon_w_houya, lat_t_houya, lon_t_houya );
+	com_wgs84_to_tokyo(lat_w_kurume, lon_w_kurume, &lat_t_kurume, &lon_t_kurume);
+	fprintf(stdout,"イオンモール東久留米(バス停)世界測地: %.6lf,%.6lf 日本測地: %.6lf,%.6lf\n",
+		lat_w_kurume, lon_w_kurume, lat_t_kurume, lon_t_kurume );
 
-	com_tokyo_to_wgs84(lat_t_inari, lon_t_inari, &lat_w_inari, &lon_w_inari);
-	fprintf(stdout,"東伏見稲荷神社 日本測地: %.6lf,%.6lf 世界測地: %.6lf,%.6lf\n",
-		lat_t_inari, lon_t_inari, lat_w_inari, lon_w_inari);
+	com_tokyo_to_wgs84(lat_t_musasi, lon_t_musasi, &lat_w_musasi, &lon_w_musasi);
+	fprintf(stdout,"イオンモールむさし村山(バス停)日本測地: %.6lf,%.6lf 世界測地: %.6lf,%.6lf\n",
+		lat_t_musasi, lon_t_musasi, lat_w_musasi, lon_w_musasi);
 
-	com_wgs84_to_tokyo(lat_w_inari, lon_w_inari, &lat_t_inari, &lon_t_inari);
-	fprintf(stdout,"東伏見稲荷神社 世界測地: %.6lf,%.6lf 日本測地: %.6lf,%.6lf\n",
-		lat_w_inari, lon_w_inari, lat_t_inari, lon_t_inari );
+	com_wgs84_to_tokyo(lat_w_musasi, lon_w_musasi, &lat_t_musasi, &lon_t_musasi);
+	fprintf(stdout,"イオンモールむさし村山(バス停)世界測地: %.6lf,%.6lf 日本測地: %.6lf,%.6lf\n",
+		lat_w_musasi, lon_w_musasi, lat_t_musasi, lon_t_musasi );
 
   return 0;
 }
